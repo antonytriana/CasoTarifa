@@ -17,6 +17,7 @@ public class Producto {
     double porcentajeDescuento;
     double IVA;
     double descuento;
+    double tarifa;
 
     public Producto(String nombre, double precio) {
         this.nombre = nombre;
@@ -47,5 +48,10 @@ public class Producto {
 
     public void setPorcentajeDescuento(double porcentajeDescuento) {
         this.porcentajeDescuento = porcentajeDescuento;
+    }
+
+    public double calcularTarifa() {
+        tarifa = precio + descuento + IVA;
+        return tarifa;
     }
 }
