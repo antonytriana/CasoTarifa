@@ -36,7 +36,8 @@ public class Producto {
             throw new IllegalArgumentException("El porcentaje no puede ser "
                     + "menor a cero");
         }
-        return (precio * porcentajeDescuento) / 100;
+        descuento = (precio * porcentajeDescuento) / 100;
+        return descuento;
     }
 
     public void setPorcentajeIVA(double porcentajeIVA) {
