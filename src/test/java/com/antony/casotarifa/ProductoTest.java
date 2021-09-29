@@ -65,4 +65,9 @@ public class ProductoTest {
             producto.calcularDescuentoDelProducto();
         });
     }
+
+    @Test
+    public void testProductoCalcularTarifa() {
+        assertEquals(62000, producto.calcularTarifa(), 0.0);
+    }
 }
