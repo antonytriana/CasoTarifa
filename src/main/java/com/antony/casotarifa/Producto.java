@@ -18,25 +18,32 @@ public class Producto {
     double IVA;
     double descuento;
 
-    public Producto(String nombre, double precio, double porcentajeIVA,
-            double porcentajeDescuento) {
+    public Producto(String nombre, double precio) {
         this.nombre = nombre;
         this.precio = precio;
-        this.porcentajeIVA = porcentajeIVA;
-        this.porcentajeDescuento = porcentajeDescuento;
     }
 
-    public double calcularIVADelProducto() throws Exception {
-        if (porcentajeIVA < 0) {
-            throw new Exception("El porcentaje no puede ser menor a cero");
+    public double calcularIVADelProducto() {
+        if (porcentajeIVA < 0 || porcentajeIVA > 100) {
+            throw new IllegalArgumentException("El porcentaje no puede ser "
+                    + "menor a cero");
         }
         return (precio * porcentajeIVA) / 100;
     }
 
-    public double calcularDescuentoDelProducto() throws Exception {
-        if (porcentajeDescuento < 0) {
-            throw new Exception("El porcentaje no puede ser menor a cero");
+    public double calcularDescuentoDelProducto() {
+        if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
+            throw new IllegalArgumentException("El porcentaje no puede ser "
+                    + "menor a cero");
         }
         return (precio * porcentajeDescuento) / 100;
+    }
+
+    public void setPorcentajeIVA(double porcentajeIVA) {
+        this.porcentajeIVA = porcentajeIVA;
+    }
+
+    public void setPorcentajeDescuento(double porcentajeDescuento) {
+        this.porcentajeDescuento = porcentajeDescuento;
     }
 }
