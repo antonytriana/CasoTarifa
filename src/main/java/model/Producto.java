@@ -33,6 +33,14 @@ public class Producto {
         return descuento;
     }
 
+    public void setIVA(double IVA) {
+        this.IVA = IVA;
+    }
+
+    public void setDescuento(double descuento) {
+        this.descuento = descuento;
+    }
+
     public static class ProductoBuilder {
 
         private String nombre;
