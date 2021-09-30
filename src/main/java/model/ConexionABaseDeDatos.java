@@ -11,4 +11,5 @@ package model;
  */
 public interface ConexionABaseDeDatos {
     void iniciarConexion();
+    void cerrarConexion();
 }
