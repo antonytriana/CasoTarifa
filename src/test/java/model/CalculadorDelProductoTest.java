@@ -27,14 +27,14 @@ public class CalculadorDelProductoTest {
     }
 
     @Test
-    public void testProductoCalcularIVADebeLanzarIllegalArgumentExceptionSiElProcentajeEsMayorACien() {
+    public void testProductoCalcularIVADebeLanzarPorcentajeIncorrectoExceptionSiElProcentajeEsMayorACien() {
         assertThrows(PorcentajeIncorrectoException.class, () -> {
             new CalculadorDelProducto(producto).calcularIVADelProducto();
         });
     }
 
     @Test
-    public void testProductoCalcularIVADebeLanzarIllegalArgumentExceptionSiElProcentajeEsMenorACero() {
+    public void testProductoCalcularIVADebeLanzarPorcentajeIncorrectoExceptionSiElProcentajeEsMenorACero() {
         producto.setIVA(-12);
         assertThrows(PorcentajeIncorrectoException.class, () -> {
             new CalculadorDelProducto(producto).calcularIVADelProducto();
@@ -49,7 +49,7 @@ public class CalculadorDelProductoTest {
     }
 
     @Test
-    public void testProductoCalcularDescuentoDebeLanzarIllegalArgumentExceptionSiElProcentajeEsMayorACien() {
+    public void testProductoCalcularDescuentoDebeLanzarPorcentajeIncorrectoExceptionSiElProcentajeEsMayorACien() {
         producto.setDescuento(200);
         assertThrows(PorcentajeIncorrectoException.class, () -> {
             new CalculadorDelProducto(producto).calcularDescuentoDelProducto();
@@ -57,7 +57,7 @@ public class CalculadorDelProductoTest {
     }
 
     @Test
-    public void testProductoCalcularDescuentoDebeLanzarIllegalArgumentExceptionSiElProcentajeEsMenorACero() {
+    public void testProductoCalcularDescuentoDebeLanzarPorcentajeIncorrectoExceptionSiElProcentajeEsMenorACero() {
         producto.setDescuento(-7);
         assertThrows(PorcentajeIncorrectoException.class, () -> {
             new CalculadorDelProducto(producto).calcularDescuentoDelProducto();
